@@ -62,7 +62,7 @@ import java.lang.reflect.Type;
  *
  * <p>New applications should prefer {@link TypeAdapter}, whose streaming API
  * is more efficient than this interface's tree API.
- *
+ * 自定义拓展的Json序列化。即 object -> json_string。
  * @author Inderjeet Singh
  * @author Joel Leitch
  *
