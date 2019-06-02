@@ -71,7 +71,7 @@ import java.lang.annotation.Target;
  *   assertEquals("v3", target.b);
  * </pre>
  * Note that MyClass.b is now deserialized from either name1, name2 or name3.
- *
+ * 属性重命名。序列化和反序列化都正常，并且无需特殊注册、配置等操作
  * @see com.google.gson.FieldNamingPolicy
  *
  * @author Inderjeet Singh
@@ -87,6 +87,7 @@ public @interface SerializedName {
    */
   String value();
   /**
+   * 备选属性名，在反序列化时使用。当多种情况同时出现时，以最后一个为准。
    * @return the alternative names of the field when it is deserialized
    */
   String[] alternate() default {};

@@ -33,6 +33,8 @@ public enum FieldNamingPolicy implements FieldNamingStrategy {
   /**
    * Using this naming policy with Gson will ensure that the field name is
    * unchanged.
+   * 默认命名策略。
+   * @see GsonBuilder#fieldNamingPolicy
    */
   IDENTITY() {
     @Override public String translateName(Field f) {

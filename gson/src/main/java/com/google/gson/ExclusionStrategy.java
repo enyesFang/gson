@@ -83,7 +83,7 @@ package com.google.gson;
  *     .addDeserializationExclusionStrategy(excludeStrings)
  *     .create();
  * </pre>
- *
+ * 序列化排除策略。
  * @author Inderjeet Singh
  * @author Joel Leitch
  *

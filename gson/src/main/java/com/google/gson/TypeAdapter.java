@@ -116,6 +116,12 @@ import java.io.Writer;
 // TypeAdapter<Date>} can convert {@code Date} instances to JSON and JSON to
 // instances of {@code Date}, but cannot convert any other types.
 //
+
+/**
+ * 类型适配器。
+ * Gson会为每一种类型创建一个TypeAdapter，同样的，每一个Type都对应唯一一个TypeAdapter.
+ * @param <T>
+ */
 public abstract class TypeAdapter<T> {
 
   /**

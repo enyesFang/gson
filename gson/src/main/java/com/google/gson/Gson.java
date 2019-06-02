@@ -462,7 +462,7 @@ public final class Gson {
           return candidate;
         }
       }
-      throw new IllegalArgumentException("GSON (" + GsonBuildConfig.VERSION + ") cannot handle " + type);
+      throw new IllegalArgumentException("GSON (2.8.5) cannot handle " + type);
     } finally {
       threadCalls.remove(type);
 

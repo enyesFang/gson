@@ -194,12 +194,22 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     abstract void read(JsonReader reader, Object value) throws IOException, IllegalAccessException;
   }
 
+  /**
+   * javaBean反射类型的TypeAdapter。
+   * @param <T>
+   */
   public static final class Adapter<T> extends TypeAdapter<T> {
     private final ObjectConstructor<T> constructor;
+    /**
+     * @see #getBoundFields(Gson, TypeToken, Class)
+     */
     private final Map<String, BoundField> boundFields;
 
     Adapter(ObjectConstructor<T> constructor, Map<String, BoundField> boundFields) {
       this.constructor = constructor;
+      /**
+       * 该类型内部的所有的Filed属性，都通过map存储起来.
+       */
       this.boundFields = boundFields;
     }
 
@@ -209,8 +219,10 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
         return null;
       }
 
+      // 首先创建该类型的对象
       T instance = constructor.construct();
 
+      // 遍历该对象内部的所有属性,把json传的读去委托给了各个属性
       try {
         in.beginObject();
         while (in.hasNext()) {

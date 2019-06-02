@@ -407,6 +407,7 @@ public class JsonReader implements Closeable {
 
   /**
    * Returns true if the current array or object has another element.
+   * json字符串中是否还有下一个元素。
    */
   public boolean hasNext() throws IOException {
     int p = peeked;
@@ -418,6 +419,7 @@ public class JsonReader implements Closeable {
 
   /**
    * Returns the type of the next token without consuming it.
+   * json字符串的下一个token标志。
    */
   public JsonToken peek() throws IOException {
     int p = peeked;
@@ -769,7 +771,7 @@ public class JsonReader implements Closeable {
   /**
    * Returns the next token, a {@link com.google.gson.stream.JsonToken#NAME property name}, and
    * consumes it.
-   *
+   * 下一个json属性name。
    * @throws java.io.IOException if the next token in the stream is not a property
    *     name.
    */
@@ -797,7 +799,7 @@ public class JsonReader implements Closeable {
    * Returns the {@link com.google.gson.stream.JsonToken#STRING string} value of the next token,
    * consuming it. If the next token is a number, this method will return its
    * string form.
-   *
+   * 返回json属性值，以字符串形式。
    * @throws IllegalStateException if the next token is not a string or if
    *     this reader is closed.
    */

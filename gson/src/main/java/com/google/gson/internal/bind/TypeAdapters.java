@@ -59,6 +59,7 @@ import com.google.gson.stream.JsonWriter;
 
 /**
  * Type adapters for basic types.
+ * 将常见的TypeAdapter维护在该util类中。
  */
 public final class TypeAdapters {
   private TypeAdapters() {
